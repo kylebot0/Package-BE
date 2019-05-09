@@ -1,9 +1,7 @@
 # Dating site
 
-# Packages
-To see what packages are featured and used in this application, please have a look at the package.json file.
 
-# Installation
+## Installation
 1. Open the terminal
 2. Go into the directory you want to install the app in
 ```
@@ -18,5 +16,12 @@ npm install
 npm run start
 ```
 
-# License
-[MIT License]
+## Usage 
+To use the app run the application using 
+```
+npm run start
+```
+
+
+## License
+[MIT License](https://github.com/kylebot0)
