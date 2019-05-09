@@ -1,5 +1,5 @@
-var http = require('http')
+const express = ('express')
+const app = express()
 const port = 5500
 
-http.createServer().listen(port)
-console.log(`Server listening on port: ${port}`)
+app.listen(port, () => console.log(`Server listening on port: ${port}`))

@@ -4,7 +4,7 @@
   "description": "tells you the time",
   "main": "Index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/kylebot0/time/issues"
   },
-  "homepage": "https://github.com/kylebot0/time#readme"
+  "homepage": "https://github.com/kylebot0/time#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
