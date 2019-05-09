@@ -1,0 +1,19 @@
+{
+  "name": "time",
+  "version": "1.0.0",
+  "description": "tells you the time",
+  "main": "Index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylebot0/time.git"
+  },
+  "author": "Kyle Bot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kylebot0/time/issues"
+  },
+  "homepage": "https://github.com/kylebot0/time#readme"
+}
