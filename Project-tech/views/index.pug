@@ -4,22 +4,10 @@ html(lang="en")
         include partials/navbar.pug
         main(class="main-background")
             section
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                div
-                    img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
+                - let i = 0;
+                while i < 9
+                    div
+                        img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
+                        - i++;
         include partials/tags.pug
+        
