@@ -17,11 +17,11 @@ npm run start
 ```
 
 ## Usage 
-To use the app run the application using 
+To run the application using 
 ```
 npm run start
 ```
-
+It only console logs if the server is running.
 
 ## License
 [MIT License](https://github.com/kylebot0)
