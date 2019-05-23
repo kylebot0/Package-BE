@@ -3,6 +3,7 @@ html(lang="en")
     body
         include partials/navbar.pug
         main(class="main-background")
+            img(src=`${weather}`)
             section
                 - let i = 0;
                 while i < 9
