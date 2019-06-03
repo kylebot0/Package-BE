@@ -1,0 +1,17 @@
+html(lang="en")
+    include partials/head.pug
+    body(class="login-body-bg")
+        main(class="login-main-bg")
+            form(action="POST")
+                
+                div
+                    legend
+                        img(src="img/logo.png")
+                    label(for="name") E-mailadres
+                    input(id="name" required="required" placeholder="naam@gmail.com")
+                    label(for="password") Wachtwoord
+                    input(id="password" type="password" name="password" required="required" placeholder="••••")
+                    i(class="fas fa-check-circle")
+                    button Inloggen >
+        include partials/tags.pug
+        

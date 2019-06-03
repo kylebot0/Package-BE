@@ -190,3 +190,75 @@ div > img {
         transform: perspective(400px);
     }
 }
+
+.login-body-bg {
+    background-color: #F299C1;
+}
+.login-main-bg {
+    display: flex;
+    justify-content: center;
+}
+.login-main-bg form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all 400ms;
+        padding: 0em 1em 1em 1em;
+        background-color: #FFF;
+        width: 40%;
+        height: 60vh;
+        border-radius: 25px;
+}
+
+.login-main-bg form > div {
+    display: flex;
+    flex-direction: column; 
+        transition: all 400ms;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 1.5em;
+    width: 75%;
+}
+
+.login-main-bg form input {
+    padding: .75em;
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    transition: all 200ms;
+}
+.login-main-bg form input:valid {
+   border: 1px solid #F299C1;
+}
+
+.login-main-bg form legend {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.login-main-bg form legend img {
+    width: 200px;
+    height: 55px;
+}
+
+.login-main-bg form button {
+    margin-top: 3em;
+    align-self: flex-end;
+    padding: 1em 2em 1em 2em;
+    background-color: #F299C1;
+    border: #F299C1;
+    border-radius: 2px;
+    opacity: 0.8;
+    width: 35%;
+    color: #FFF;
+    transition: 300ms all;
+}
+
+.login-main-bg form button:hover {
+    cursor: pointer;
+    transition: 300ms all;
+    opacity: 0.5;
+}
+

@@ -1,24 +1,26 @@
 const dotenv = require('dotenv').config()
-const express = require('express')
-const app = express()
+const express = require('express'), app = express()
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const mongodb = require('mongodb');
 const port = 5500
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGODB_URI
-const client = new MongoClient(uri, {
-    useNewUrlParser: true
-});
-client.connect(err => {
-    const collection = client.db("test").collection("devices");
-    // perform actions on the collection object
-    console.log('connected');
+const uri = process.env.DB_NAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_LINK + '/test?retryWrites=true';
 
-    client.close();
-});
+mongoose.connect(uri, {
+    useNewUrlParser: true})
+    .then(() => console.log(`Connected succesfully`))
+    .catch(err => console.error('Connection failed: ', err))
 
-app.set('view engine', 'pug')
-app.use(express.static('public'))
-app.use(require('./controllers'))
+app
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({
+        extended: false
+    }))
+    .use(express.static('public'))
+    .use(require('./controllers/router'))
+    .set('view engine', 'pug')
 
+;
 
 app.listen(port, () => console.log(`Server listening on port: ${port}`))
