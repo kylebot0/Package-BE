@@ -34,7 +34,6 @@ module.exports = function(passport) {
                     if (err) throw err;
                     if (authSucces) {
                         console.log(`${user.firstName} is now logged in`);
-                        var user_id = user.id
                         return done(null, user.id);
                     } else {
                         return done(null, false, {
@@ -49,12 +48,6 @@ module.exports = function(passport) {
     });
 
     passport.deserializeUser(function (user_id, done) {
-         User.findById(user_id.user, function (error, user) {
-             if (error) {
-                 done(error);
-             } else {
-                 done(null, user);
-             }
-         })
+                 done(null, user_id);
     });
 }

@@ -6,6 +6,7 @@ const mongodb = require('mongodb')
 const passport = require('passport')
 const session = require('express-session')
 const flash = require('connect-flash')
+const path = require('path')
 const login = require('./controllers/login')(passport);
 
 const port = 5500
@@ -32,7 +33,7 @@ app
     .use(passport.initialize())
     .use(passport.session())
     .use(flash())
-    .use(express.static('public'))
+    .use(express.static(path.join(__dirname, 'public')))
     .use(require('./controllers/router'))
     .set('view engine', 'pug')
     .listen(port, () => console.log(`Server listening on port: ${port}`))

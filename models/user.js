@@ -18,14 +18,26 @@ var userSchema = new mongoose.Schema({
         lowercase: true,
         required: true,
         index: true,
-        required: true
     },
     lastName: {
         type: String,
         lowercase: true,
         required: true,
         index: true,
-        required: true
+    },
+    hobby: {
+        type: String,
+        lowercase: true,
+        index: true,
+    },
+    gender: {
+        type: String,
+        lowercase: true,
+        index: true,
+    },
+    image: {
+        type: String,
+        index: true,
     },
 });
 
