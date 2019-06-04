@@ -95,7 +95,6 @@ router.post('/profiel/delete', loggedIn, async (req, res) => {
 
         }
     });
-
     return res.redirect('/register');
 })
 
