@@ -210,6 +210,7 @@ div > img {
         border-radius: 25px;
 }
 
+
 .login-main-bg form > div {
     display: flex;
     flex-direction: column; 
@@ -261,4 +262,18 @@ div > img {
     transition: 300ms all;
     opacity: 0.5;
 }
-
+.register-body-bg {
+    background-color: #F299C1;
+}
+.register-body-bg form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 400ms;
+    padding: 0em 1em 1em 1em;
+    background-color: #FFF;
+    width: 40%;
+    height: 90vh;
+    border-radius: 25px;
+    margin-bottom: 2.5em;
+}
