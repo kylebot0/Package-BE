@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 const userSchema = require('../models/user')
 const passport = require('passport')
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
-});
+})
 
 module.exports = function(passport) {
     passport.use(new LocalStrategy({
@@ -21,14 +21,14 @@ module.exports = function(passport) {
 
             let auth = {
                 email: username
-            };
+            }
             userSchema.findOne(auth, function (err, user) {
                 if (err) throw err;
                 if (!user) {
                     console.log('no user found')
                     return done(null, false, {
                         message: 'No user found'
-                    });
+                    })
                 }
                 bcrypt.compare(password, user.password, function (err, authSucces) {
                     if (err) throw err;
@@ -38,16 +38,16 @@ module.exports = function(passport) {
                     } else {
                         return done(null, false, {
                             message: 'Wrong password'
-                        });
+                        })
                     }
-                });
-            });
-        }));
+                })
+            })
+        }))
     passport.serializeUser(function (user_id, done) {
-        done(null, user_id);
-    });
+        done(null, user_id)
+    })
 
     passport.deserializeUser(function (user_id, done) {
-                 done(null, user_id);
-    });
+                 done(null, user_id)
+    })
 }

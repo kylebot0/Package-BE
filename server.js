@@ -7,11 +7,10 @@ const passport = require('passport')
 const session = require('express-session')
 const flash = require('connect-flash')
 const path = require('path')
-const login = require('./controllers/login')(passport);
+const login = require('./controllers/login')(passport)
 
-const port = 5500
-
-const uri = process.env.DB_NAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_LINK + '/test?retryWrites=true';
+const port = process.env.PORT
+const uri = process.env.DB_NAME + ':' + process.env.DB_PASSWORD + '@' + process.env.DB_LINK + '/test?retryWrites=true'
 
 mongoose.connect(uri, {
     useCreateIndex: true,

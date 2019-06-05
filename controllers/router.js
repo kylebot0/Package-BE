@@ -1,17 +1,17 @@
 const express = require('express')
-const session = require('express-session');
+const session = require('express-session')
 const router = express.Router()
 const userSchema = require('../models/user')
 const passport = require('passport')
-const login = require('../controllers/login');
-const LocalStrategy = require('passport-local').Strategy;
-const bodyParser = require('body-parser');
+const login = require('../controllers/login')
+const LocalStrategy = require('passport-local').Strategy
+const bodyParser = require('body-parser')
 const bcrypt = require('bcrypt')
-const multer = require("multer");
+const multer = require("multer")
 const path = require('path')
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
-});
+})
 
 
 
@@ -20,10 +20,9 @@ function loggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
     } else {
-        res.redirect("/login");
+        res.redirect("/login")
     }
 }
-
 //File storage
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -40,6 +39,8 @@ const upload = multer({
         console.log(file.originalname + ' is starting ...')
     },
 });
+
+//All routes
 router.get('/', loggedIn, function (req, res) {
     const user_id = req.session.passport.user
     userSchema.findOne({
@@ -76,7 +77,6 @@ router.post('/profiel/hobby', loggedIn, async (req, res) => {
         new: true,
         upsert: true
     })
-
     return res.redirect('/profiel');
 })
 
@@ -92,7 +92,6 @@ router.post('/profiel/delete', loggedIn, async (req, res) => {
         } else {
             console.log("deleted user");
             res.status(204);
-
         }
     });
     return res.redirect('/register');
@@ -109,7 +108,6 @@ router.post('/profiel/gender', loggedIn, async (req, res) => {
         new: true,
         upsert: true
     })
-
     return res.redirect('/profiel');
 })
 
@@ -124,9 +122,9 @@ router.post('/profiel/image', loggedIn, upload.single('image'), async (req, res)
         new: true,
         upsert: true
     })
-    
     return res.redirect('/profiel');
 })
+
 //----------LOGIN / REGISTER ----------------------------------------------------
 // Met een beetje hulp van https://medium.com/createdd-notes/starting-with-authentication-a-tutorial-with-node-js-and-mongodb-25d524ca0359
 // Ook met behulp van de docs van Passport

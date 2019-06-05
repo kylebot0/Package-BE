@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 const Hash_Salt = 10;
 var userSchema = new mongoose.Schema({
     email: {
@@ -43,14 +43,15 @@ var userSchema = new mongoose.Schema({
 
 //Bit of help from stackoverflow https://stackoverflow.com/questions/14588032/mongoose-password-hashing
 userSchema.pre('save', function (next) {
-    var user = this;
+    var user = this
     bcrypt.hash(user.password, Hash_Salt, function (err, hash) {
         if (err) {
-            return next(err);
+            return next(err)
+        } else {
+        user.password = hash
+        next()
         }
-        user.password = hash;
-        next();
     })
 });
-var user = mongoose.model('user', userSchema);
-module.exports = user;
+var user = mongoose.model('user', userSchema)
+module.exports = user
