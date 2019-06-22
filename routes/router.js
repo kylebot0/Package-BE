@@ -18,7 +18,8 @@ const {
     loggedIn,
     loginError,
     loggedOut,
-    authenticate
+    authenticate,
+    splashpage
 } = require('../controllers/routing/login')
 
 const {
@@ -49,9 +50,10 @@ const upload = multer({
 });
 
 router
+    //Get routes
     .get('/', loggedIn, findUserHome)
     .get('/profiel', loggedIn, profile)
-    
+    .get('/splashpage', splashpage)
     .get('/login', loginError)
     .get('/register', register)
 

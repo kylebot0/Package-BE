@@ -6,7 +6,7 @@ function loggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
     } else {
-        res.redirect("/login")
+        res.redirect("/splashpage")
     }
 }
 
@@ -34,4 +34,8 @@ function loggedOut(req, res, next) {
     }
 }
 
-module.exports = {loggedIn, authenticate, loggedOut, loginError};
+function splashpage(req, res, next) {
+    res.render('splashpage')
+}
+
+module.exports = {loggedIn, authenticate, loggedOut, loginError, splashpage};
