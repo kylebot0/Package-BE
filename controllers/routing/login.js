@@ -6,7 +6,7 @@ function loggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next()
     } else {
-        res.redirect("/login")
+        res.redirect("/splashpage")
     }
 }
 
@@ -14,8 +14,28 @@ function authenticate(req, res, next) {
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/login',
-        failureFlash: 'Invalid username or password.'
+        failureFlash: true
     })(req, res, next);
 }
+function loginError(req, res) {
+    res.render('login', {
+        message: req.flash('error')
+    })
+}
+function loggedOut(req, res, next) {
+    if (req.session) {
+        console.log('Is in session')
+        req.session.destroy(err => {
+            if (err) {
+                return next(err);
+            }
+            return res.redirect("/");
+        });
+    }
+}
 
-module.exports = {loggedIn, authenticate};
+function splashpage(req, res, next) {
+    res.render('splashpage')
+}
+
+module.exports = {loggedIn, authenticate, loggedOut, loginError, splashpage};

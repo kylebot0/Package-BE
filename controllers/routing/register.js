@@ -4,7 +4,9 @@ const userSchema = require('../../models/user')
 
 
 function register(req, res) {
-    res.render('register', {})
+    res.render('register', {
+        title: 'register'
+    })
 }
 
 async function registerPost(req, res, err) {

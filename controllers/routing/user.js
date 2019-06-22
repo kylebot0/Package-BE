@@ -27,7 +27,6 @@ function profile(req, res) {
             imgUrl: `img/avatars/${user.image}`
         })
         console.log(user.image)
-
     })
 }
 

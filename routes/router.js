@@ -16,7 +16,10 @@ const {
 
 const {
     loggedIn,
-    authenticate
+    loginError,
+    loggedOut,
+    authenticate,
+    splashpage
 } = require('../controllers/routing/login')
 
 const {
@@ -47,12 +50,11 @@ const upload = multer({
 });
 
 router
+    //Get routes
     .get('/', loggedIn, findUserHome)
     .get('/profiel', loggedIn, profile)
-    
-    .get('/login', function (req, res) {
-        res.render('login', {})
-    })
+    .get('/splashpage', splashpage)
+    .get('/login', loginError)
     .get('/register', register)
 
     //Post requests
@@ -61,15 +63,8 @@ router
     .post('/profiel/image', loggedIn, upload.single('image'), profilePicturePost)
     .post('/register', urlencodedParser, registerPost)
     .post('/login', authenticate)
+    .post('/logout', loggedOut)
 ;
-
-router.post('/logout', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: res.send('Failed'),
-        failureFlash: 'Failed to logout'
-    })(req, res, next);
-})
 
 router.use(function (req, res) {
     res.status(404).render('404.pug', {
