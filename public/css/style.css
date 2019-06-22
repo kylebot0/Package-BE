@@ -39,11 +39,19 @@ body {
     width: 200px;
 }
 
-.navbar .nav-item a {
+.navbar .nav-item a, .nav-item button {
     color: black;
     text-decoration: none;
     padding-left: 0.5em;
     padding-right: 0.5em;
+    border: none;
+}
+.nav-item:last-of-type form {
+    display: inline-block;
+}
+.nav-item button {
+    font-size: 1em;
+    cursor:pointer;
 }
 
 .nav-item {

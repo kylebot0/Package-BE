@@ -18,4 +18,16 @@ function authenticate(req, res, next) {
     })(req, res, next);
 }
 
-module.exports = {loggedIn, authenticate};
+function loggedOut(req, res, next) {
+    if (req.session) {
+        console.log('Is in session')
+        req.session.destroy(err => {
+            if (err) {
+                return next(err);
+            }
+            return res.redirect("/");
+        });
+    }
+}
+
+module.exports = {loggedIn, authenticate, loggedOut};

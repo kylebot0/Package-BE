@@ -16,6 +16,7 @@ const {
 
 const {
     loggedIn,
+    loggedOut,
     authenticate
 } = require('../controllers/routing/login')
 
@@ -61,15 +62,8 @@ router
     .post('/profiel/image', loggedIn, upload.single('image'), profilePicturePost)
     .post('/register', urlencodedParser, registerPost)
     .post('/login', authenticate)
+    .post('/logout', loggedOut)
 ;
-
-router.post('/logout', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/',
-        failureRedirect: res.send('Failed'),
-        failureFlash: 'Failed to logout'
-    })(req, res, next);
-})
 
 router.use(function (req, res) {
     res.status(404).render('404.pug', {
