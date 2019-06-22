@@ -33,7 +33,7 @@ app
     .use(passport.session())
     .use(flash())
     .use(express.static(path.join(__dirname, 'public')))
-    .use(require('./controllers/router'))
+    .use(require('./routes/router'))
     .set('view engine', 'pug')
     .listen(port, () => console.log(`Server listening on port: ${port}`))
 ;
