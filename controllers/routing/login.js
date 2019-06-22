@@ -14,10 +14,14 @@ function authenticate(req, res, next) {
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/login',
-        failureFlash: 'Invalid username or password.'
+        failureFlash: true
     })(req, res, next);
 }
-
+function loginError(req, res) {
+    res.render('login', {
+        message: req.flash('error')
+    })
+}
 function loggedOut(req, res, next) {
     if (req.session) {
         console.log('Is in session')
@@ -30,4 +34,4 @@ function loggedOut(req, res, next) {
     }
 }
 
-module.exports = {loggedIn, authenticate, loggedOut};
+module.exports = {loggedIn, authenticate, loggedOut, loginError};

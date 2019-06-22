@@ -18,6 +18,10 @@ body {
     padding: 0;
 }
 
+.error {
+    color: red;
+    font-style: italic;
+}
 .navbar {
     padding: 1% 0% 1% 0%;
     transition: all 400ms ease-out;

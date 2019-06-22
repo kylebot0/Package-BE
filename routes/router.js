@@ -16,6 +16,7 @@ const {
 
 const {
     loggedIn,
+    loginError,
     loggedOut,
     authenticate
 } = require('../controllers/routing/login')
@@ -51,9 +52,7 @@ router
     .get('/', loggedIn, findUserHome)
     .get('/profiel', loggedIn, profile)
     
-    .get('/login', function (req, res) {
-        res.render('login', {})
-    })
+    .get('/login', loginError)
     .get('/register', register)
 
     //Post requests

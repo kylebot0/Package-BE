@@ -11,6 +11,7 @@ html(lang="en")
                     input(id="name" required="required" name="username" placeholder="naam@gmail.com")
                     label(for="password") Wachtwoord
                     input(id="password" type="password" name="password" required="required" placeholder="••••")
+                    span(class="error")=message
                     i(class="fas fa-check-circle")
                     button Inloggen >
         include partials/tags.pug
