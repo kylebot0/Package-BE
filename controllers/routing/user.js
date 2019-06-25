@@ -19,12 +19,14 @@ function profile(req, res) {
         _id: user_id
     }, (err, user) => {
         res.render('profiel', {
-            title: 'Profiel',
+            title: 'Profiel | ' + user.firstName + ' ' + user.lastName,
             email: user.email,
             naam: user.firstName + ' ' + user.lastName,
-            hobby: user.hobby,
+            age: user.age,
             gender: user.gender,
-            imgUrl: `img/avatars/${user.image}`
+            imgUrl: `img/avatars/${user.image}`,
+            pref: user.pref,
+            food: user.food
         })
         console.log(user.image)
     })

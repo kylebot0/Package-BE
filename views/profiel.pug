@@ -1,35 +1,22 @@
 html(lang="en")
     include partials/head.pug
-    body(class="body-profiel")
+    body
         include partials/navbar.pug
-        main(class="main-background")
+        main(class="main-background body-profiel")
             //- img(src=`${weather}`)
             section
                 img(src=`${imgUrl}`)
                 article
-                    h2 Hobby
-                    p Hobby: #{hobby}
-                    
-                article
-                    h2 Gegevens
-                    p email: #{email}
-                    p Naam: #{naam}
+                    h2 #{naam}
+                    p Email: #{email}
+                    p Age: #{age}
                     p Gender: #{gender}
-                article
-                    h2 Games
-                    p 2
-                form(action="/profiel/hobby" method="POST")
-                        label(for="hobby") Voeg hobby toe
-                        input(id="hobby" required="required" name="hobby" placeholder="+")
-                        button(type="submit") Voeg toe
-                form(action="/profiel/gender" method="POST")
-                        label(for="gender") Voeg gender toe
-                        input(id="gender" required="required" name="gender" placeholder="+")
-                        button(type="submit") Voeg toe
+                    p Favorite food: #{food}
+                    p Is looking for: #{pref}
                 form(action='/profiel/image' accept="image/x-png,image/gif,image/jpeg" method="POST" enctype="multipart/form-data")
-                        label(for="image") Voeg foto toe
+                        label(for="image") Change photo
                         input(type='file' required="required" name="image")
-                        button(type="submit") Voeg toe
+                        button(type="submit") Change
                 form(action="/profiel/delete" method="POST")
                         label Delete account
                         button(type="submit") Delete
