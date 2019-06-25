@@ -76,9 +76,24 @@ function stepCount() {
             steps[1].classList.remove('finished');
             steps[0].classList.add('finished');
             steps[1].classList.add('active');
-        } else {
+        } else if (stepValue === 2){
+            steps[3].classList.remove('active');
+            steps[2].classList.remove('finished');
             steps[1].classList.add('finished');
             steps[2].classList.add('active');
+        } else if (stepValue === 3) {
+            steps[4].classList.remove('active');
+            steps[3].classList.remove('finished');
+            steps[2].classList.add('finished');
+            steps[3].classList.add('active');
+        } else if (stepValue === 4) {
+            steps[5].classList.remove('active');
+            steps[4].classList.remove('finished');
+            steps[3].classList.add('finished');
+            steps[4].classList.add('active');
+        } else {
+            steps[4].classList.add('finished');
+            steps[5].classList.add('active');
         }
     }
 }
