@@ -23,7 +23,12 @@ async function registerPost(req, res, err) {
                     email: req.body.email,
                     password: req.body.password,
                     firstName: req.body.firstName,
-                    lastName: req.body.lastName
+                    lastName: req.body.lastName,
+                    gender: req.body.gender,
+                    age: req.body.age,
+                    pref: req.body.pref,
+                    image: Math.floor(Date.now() / 10000) + '.png',
+                    food: req.body.food,
                 });
 
                 await user.save();
