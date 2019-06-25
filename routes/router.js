@@ -25,6 +25,7 @@ const {
 const {
     findUserHome,
     profile,
+    profileId,
     profileHobbyPost,
     profileDeletePost,
     profilePicturePost
@@ -53,6 +54,7 @@ router
     //Get routes
     .get('/', loggedIn, findUserHome)
     .get('/profiel', loggedIn, profile)
+    .get('/profiel/:id', loggedIn, profileId)
     .get('/splashpage', splashpage)
     .get('/login', loginError)
     .get('/register', register)
