@@ -61,7 +61,7 @@ router
     .post('/profiel/hobby', loggedIn, profileHobbyPost)
     .post('/profiel/delete', loggedIn, profileDeletePost)
     .post('/profiel/image', loggedIn, upload.single('image'), profilePicturePost)
-    .post('/register', urlencodedParser, registerPost)
+    .post('/register', upload.single('image'), urlencodedParser, registerPost)
     .post('/login', authenticate)
     .post('/logout', loggedOut)
 ;

@@ -25,7 +25,7 @@ var userSchema = new mongoose.Schema({
         required: true,
         index: true,
     },
-    hobby: {
+    age: {
         type: String,
         lowercase: true,
         index: true,
@@ -37,6 +37,15 @@ var userSchema = new mongoose.Schema({
     },
     image: {
         type: String,
+        index: true,
+    },
+    food: {
+        type: [String],
+        index: true,
+    },
+    pref: {
+        pref: String,
+        type: Object,
         index: true,
     },
 });

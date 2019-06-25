@@ -1,0 +1,278 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'font/raleway/Raleway-Regular.ttf', sans-serif;
+    background-color: #e08b3e;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: #e08b3e;
+    display: flex;
+    justify-content: center;
+}
+
+main form {
+    margin: 5em 0 5em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 400ms;
+    padding: 0em 1em 1em 1em;
+    background-color: #FFF;
+    width: 40%;
+    height: 120vh;
+    border-radius: 25px;
+}
+
+
+main form>fieldset.valid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 400ms;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 1.5em;
+    width: 75%;
+}
+
+div[role='group'] {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+}
+
+div[role='group-gender'] {
+    padding: 0.5em;
+    border: 1px solid #e08b3e;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+main form input {
+    width: 70%;
+    padding: .75em;
+    font-size: 0.75em;
+    margin-bottom: 2em;
+    transition: all 200ms;
+}
+
+.gender {
+    width: 30%;
+}
+
+main form input:focus {
+    width: 75%;
+}
+
+main form input:invalid {
+    border: 1px solid grey;
+}
+
+main form input:valid {
+    border: 1px solid #e08b3e;
+}
+
+main form legend {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+main form legend img {
+    width: 200px;
+    height: 75px;
+}
+
+main form button.valid {
+    display: block;
+    margin-top: 3em;
+    padding: 1em 2em 1em 2em;
+    background-color: #e08b3e;
+    border: #e08b3e;
+    border-radius: 2px;
+    opacity: 0.8;
+    width: 35%;
+    color: #FFF;
+    transition: 300ms all;
+}
+
+main form button:hover {
+    cursor: pointer;
+    transition: 300ms all;
+    opacity: 0.3;
+}
+
+/* De hacky manier, dit moet nog verbeterd worden */
+main form>div:last-of-type {
+    position: absolute;
+    bottom: 10vh;
+}
+
+main form fieldset.valid>div>div:last-of-type {
+    display: flex;
+    position: absolute;
+    bottom: -15vh;
+    width: 30vw;
+    left: 12vw;
+}
+
+main form fieldset:nth-of-type(2)>div>div:last-of-type {
+    bottom: -20vh;
+}
+
+main form fieldset>div>div:last-of-type .prev {
+    border-right: 10px solid #fff;
+}
+
+main form fieldset:first-of-type>div>div:last-of-type {
+    position: absolute;
+    bottom: -15vh;
+    width: 30vw;
+    left: 22vw;
+}
+
+/* ------------------------------------------------- */
+
+main form button.valid.prev {
+    opacity: 0.5;
+}
+
+main form button.submit {
+    background-color: #47fa47;
+    display: block;
+    margin-top: 3em;
+    padding: 1em 2em 1em 2em;
+    border: #47fa47;
+    border-radius: 2px;
+    opacity: 0.8;
+    width: 35%;
+    color: #FFF;
+    transition: 300ms all;
+}
+
+.span-indication.valid {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 999px;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.span-indication.active {
+    opacity: 1;
+    background-color: rgb(190, 190, 190);
+
+}
+
+.span-indication.finished {
+    background-color: #98fb98;
+    animation-name: slide;
+    animation-duration: 600ms;
+}
+
+.tab.valid {
+    display: none;
+}
+
+.current-tab.valid {
+    display: flex;
+}
+
+@keyframes slide {
+    0% {
+        background-color: rgb(190, 190, 190);
+
+    }
+
+    100% {
+        background-color: #98fb98;
+    }
+}
+
+@keyframes slideNext {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInNext {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideNext {
+    animation-name: slideNext;
+    animation-duration: 500ms;
+}
+
+.slideInNext {
+    animation-name: slideInNext;
+    animation-duration: 500ms;
+}
+
+/* Progressive enhancement */
+
+main .next,
+main .prev {
+    display: none;
+}
+
+.span-indication {
+    display: none;
+}
+
+main form>fieldset {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 400ms;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 1.5em;
+    height: 30vh;
+    width: 75%;
+}
+
+main form>fieldset:nth-of-type(2) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 400ms;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 1.5em;
+    height: 25vh;
+    width: 75%;
+}
+
+body main form.valid {
+    height: 80vh;
+}

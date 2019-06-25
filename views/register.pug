@@ -1,22 +1,82 @@
 html(lang="en")
-    include partials/head.pug
-    body(class="register-body-bg")
-        main(class="login-main-bg")
-            form(method="POST" action="/register")
+    include partials/head_register.pug
+    body
+        main
+            form(method="POST" action="/register" accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data")
+                legend
+                    img(src='img/logo.svg')
+                fieldset.tab.current-tab
+                    div(role='group')
+                        label(for='firstName')  First name:
+                        input(type='text', name='firstName', placeholder='Kyle', required='')
+                        label(for='lastName')  Last name:
+                        input(type='text', name='lastName', placeholder='Bot', required='')
+                        label(for='age')  Age:
+                        input.gender(type='number', name='age', min='16', max='80', step='1', value='16', size='16', required='')
+                        div
+                            button.next.first(type='button') Next
+                fieldset.tab.current-tab
+                    div(role='group')
+                        label.gender  Gender:
+                        div(role='group-gender')
+                            label(for='male')  Male
+                            input(type='radio', name='gender', value='male')
+                            label(for='female')  Female
+                            input(type='radio', name='gender', value='female')
+                        div
+                            button.prev(type='button') Previous
+                            button.next(type='button') Next
+                fieldset.tab.current-tab
+                     div(role='group')
+                        label.gender  Sexual preference:
+                        div(role='group-gender')
+                            label(for='pref_male')  Male
+                            input(type='radio', name='pref', value='male')
+                            label(for='pref_female')  Female
+                            input(type='radio', name='pref', value='female')
+                        div
+                            button.prev(type='button') Previous
+                            button.next(type='button') Next
+                fieldset.tab.current-tab
+                     div(role='group')
+                        label.gender(for="image")  Upload a profile picture:
+                        div(role='group-gender')
+                            input(type='file' required="required" name="image")
+                        div
+                            button.prev(type='button') Previous
+                            button.next(type='button') Next
+                fieldset.tab.current-tab
+                     div(role='group')
+                        label(for="food")  What kind of food do you like:
+                        select(name='food' multiple size="8")
+                            option(value='fast_food') Fast food
+                            option(value='pasta') Pasta
+                            option(value='meat') Meat
+                            option(value='desserts') Desserts
+                            option(value='vegetables') Vegetables
+                            option(value='bread') Bread
+                            option(value='kosher') Kosher
+                            option(value='seafood') Seafood
+                        div
+                            button.prev(type='button') Previous
+                            button.next(type='button') Next
+                fieldset.tab.current-tab
+                    div(role='group')
+                        label(for='email')  Email:
+                        input(id="email" name="email" type="email" required="required" placeholder="kyle@gmail.com")
+                        label(for='password')  Password:
+                        input(id="password" name="password" type="password" required="required" placeholder="••••")
+                        label(for='confPassword')  Confirm password:
+                        input(id="confPassword" name="confPassword" type="password" required="required" placeholder="••••")
+                        div
+                            button.prev(type='button') Previous
+                            button.submit(type='submit') Submit
                 div
-                    legend
-                        img(src="img/logo.png")
-                    label(for="email") E-mailadres
-                    input(id="email" name="email" required="required" placeholder="naam@gmail.com")
-                    label(for="firstName") Voornaam
-                    input(id="firstName" name="firstName" required="required" placeholder=" ")
-                    label(for="lastName") Achternaam
-                    input(id="lastName"  name="lastName" required="required" placeholder=" ")
-                    label(for="password") Wachtwoord
-                    input(id="password" name="password" type="password" required="required" placeholder="••••")
-                    label(for="confPassword") Wachtwoord bevestigen
-                    input(id="confPassword" name="confPassword" type="password" required="required" placeholder="••••")
-                    i(class="fas fa-check-circle")
-                    button Registreer >
-        include partials/tags.pug
+                    span.span-indication.active(value='1')
+                    span.span-indication(value='2')
+                    span.span-indication(value='3')
+                    span.span-indication(value='4')
+                    span.span-indication(value='5')
+                    span.span-indication(value='6')
+        script(src='js/register.js')
         
