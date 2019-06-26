@@ -20,7 +20,7 @@ function search(req, res) {
             if (matches.length == 0) {
                 res.render('search', {
                     matches: matches.length,
-                    matchId: matchId,
+                    matchId: '',
                     message: 'Try again later,'
                 })
             }
