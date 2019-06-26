@@ -8,7 +8,7 @@ function findUserHome(req, res) {
         _id: user_id
     }, (err, user) => {
         res.render('index', {
-            title: 'Winked',
+            title: 'Index | FoodLove',
             username: user.email
         })
     })
