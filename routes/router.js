@@ -10,6 +10,12 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 const {
+    search,
+    matches,
+    renderMatches
+} = require('../controllers/routing/search')
+
+const {
     register,
     registerPost
 } = require('../controllers/routing/register')
@@ -25,6 +31,7 @@ const {
 const {
     findUserHome,
     profile,
+    profileId,
     profileHobbyPost,
     profileDeletePost,
     profilePicturePost
@@ -53,9 +60,12 @@ router
     //Get routes
     .get('/', loggedIn, findUserHome)
     .get('/profiel', loggedIn, profile)
+    .get('/profiel/:id', loggedIn, profileId)
     .get('/splashpage', splashpage)
     .get('/login', loginError)
     .get('/register', register)
+    .get('/search', loggedIn, search)
+    .get('/matches', loggedIn, matches)
 
     //Post requests
     .post('/profiel/hobby', loggedIn, profileHobbyPost)

@@ -1,0 +1,17 @@
+html(lang="en")
+    include partials/userHead.pug
+    body
+        include partials/navbar.pug
+        main(class="main-background body-profiel")
+            //- img(src=`${weather}`)
+            section
+                img(src=`${imgUrl}`)
+                article
+                    h2 #{naam}
+                    p Email: #{email}
+                    p Age: #{age}
+                    p Gender: #{gender}
+                    p Favorite food: #{food}
+                    p Is looking for: #{pref}
+        include partials/tags.pug
+        

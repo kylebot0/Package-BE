@@ -1,5 +1,6 @@
 const userSchema = require('../../models/user')
 const passport = require('passport')
+const camelCase = require('camelcase')
 
 function findUserHome(req, res) {
     const user_id = req.session.passport.user
@@ -21,7 +22,27 @@ function profile(req, res) {
         res.render('profiel', {
             title: 'Profiel | ' + user.firstName + ' ' + user.lastName,
             email: user.email,
-            naam: user.firstName + ' ' + user.lastName,
+            naam: camelCase(user.firstName) + ' ' + camelCase(user.lastName),
+            age: user.age,
+            gender: user.gender,
+            imgUrl: `img/avatars/${user.image}`,
+            pref: user.pref,
+            food: user.food
+        })
+        console.log(user.image)
+    })
+}
+
+function profileId(req, res) {
+    let user_id = req.params.id
+    console.log(user_id)
+    let user = userSchema.findOne({
+        _id: user_id
+    }, (err, user) => {
+        res.render('profiel', {
+            title: 'Profiel | ' + user.firstName + ' ' + user.lastName,
+            email: user.email,
+            naam: camelCase(user.firstName) + ' ' + camelCase(user.lastName),
             age: user.age,
             gender: user.gender,
             imgUrl: `img/avatars/${user.image}`,
@@ -81,5 +102,6 @@ module.exports = {
     profile,
     profileHobbyPost,
     profileDeletePost,
-    profilePicturePost
+    profilePicturePost,
+    profileId
 }

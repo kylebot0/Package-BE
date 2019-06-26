@@ -1,0 +1,16 @@
+html(lang="en")
+    include partials/head.pug
+    body
+        include partials/navbar.pug
+        main(class="main-background")
+            section.search-section
+                .lds-ring
+                    div
+                    div
+                    div
+                    div
+                .search-container
+                    h1 We found you #{matches} matches!
+                    a(href='matches') 
+                        p Go see them now
+        include partials/tags.pug
