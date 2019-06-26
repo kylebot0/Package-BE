@@ -1,25 +1,36 @@
 # Dating site
 This app uses Mongodb Atlas, make sure to create an account on Mongodb Atlas.
 
+## Supported features
+1. Register an account
+2. Login
+3. Sessions
+4. Update profile
+5. Search for matches
+6. Look at other profile
+7. Delete your own profile
+8. View your matches on a page
+
 ## Installation
-1. Open the terminal
-2. Go into the directory you want to install the app in
+
+### 1. Open the terminal
+### 2. Go into the directory you want to install the app in
 ```
 git clone https://github.com/kylebot0/Blok-tech.git
 ```
-3. Cd into the directory
+### 3. Cd into the directory
 ```
 cd block-tech
 ```
-4. Install the dependecies 
+### 4. Install the dependecies 
 ```
 npm install
 ```
-5. Make a .env file for sensitive info.
+### 5. Make a .env file for sensitive info.
 ```
 touch .env
 ```
-6. Edit the code in the .env file according to your account credentials.
+### 6. Edit the code in the .env file according to your account credentials.
 ```
 DB_NAME=
 DB_PASSWORD=
@@ -28,7 +39,7 @@ SECRET=
 
 ```
 
-7. Run the application
+### 7. Run the application
 ```
 npm run dev
 ```
