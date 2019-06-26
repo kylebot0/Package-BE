@@ -598,3 +598,22 @@ main {
     color: white;
     border-radius: 5px;
 }
+
+.body-matches section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.body-matches .valid {
+    display: block;
+}
+
+.body-matches .valid article {
+    margin-top:2em;
+}
+.body-matches .valid h1 {
+    margin-left: 3em;
+}

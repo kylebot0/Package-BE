@@ -63,13 +63,14 @@ async function matches(req, res) {
     let user = userSchema.findOne({
         _id: user_id
     }, (err, user) => {
-        console.log(user.matchId)
-        // if (user.matchId == undefined) {
-        //     res.render('matches', {
-        //         title: 'Matches | ' + user.firstName + ' ' + user.lastName,
-        //         message: 'Nog geen matches, probeer eerst te zoeken'
-        //     })
-        // } else {
+        console.log(user.matchesId.length)
+        if (user.matchesId.length == 0) {
+            res.render('matches', {
+                title: 'Matches | ' + user.firstName + ' ' + user.lastName,
+                message: 'Nog geen matches, probeer eerst te zoeken'
+                
+            })
+        } else {
         let matchArray = []
         let matchesId = user.matchesId
         for (let i = 0; i < matchesId.length; i++) {
@@ -88,10 +89,11 @@ async function matches(req, res) {
             console.log(matchArray)
             res.render('matches', {
                 title: 'Matches | ' + user.firstName + ' ' + user.lastName,
-                matchArray: matchArray
+                matchArray: matchArray,
+                valid: 'valid'
             })
         },1000)
-    // }
+    }
     })
 
 }
