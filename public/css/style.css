@@ -545,3 +545,56 @@ main {
     border-radius: 999px;
     margin-right: 2em;
 }
+
+.body-index {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body-index a {
+    text-decoration: none;
+    color: #e08b3e;
+}
+
+.container-index {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-index p:last-of-type {
+    /* margin-left: 4em; */
+    padding: 1.5em;
+    background-color: #e08b3e;
+    color: white;
+    border-radius: 5px;
+}
+.container-index a:last-of-type p{
+    margin-left: 4em;
+    
+}
+
+.container-search {
+    margin-top: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-search a {
+    text-decoration: none;
+}
+
+.container-search p:first-of-type {
+    margin: 0;
+    padding: 1em;
+    background-color: #e08b3e;
+    color: white;
+    border-radius: 5px;
+}
