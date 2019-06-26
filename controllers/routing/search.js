@@ -8,9 +8,12 @@ function search(req, res) {
     }, (err, user) => {
         let user_pref = user.pref
         let user_food = user.food
+        console.log(user_food)
         userSchema.find({
             gender: user_pref,
-            food: user_food
+            food:  {
+                $in: user_food
+            }
         }, (err, matches) => {
             if (err) {
                 console.log(err);
@@ -47,6 +50,7 @@ function search(req, res) {
                 })
                 res.render('search', {
                     matches: matchAmount,
+                    message: 'Go see them now'
                 })
             }
         })
