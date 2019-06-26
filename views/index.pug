@@ -1,13 +1,14 @@
 html(lang="en")
     include partials/head.pug
-    body(class="body-zoeken")
+    body
         include partials/navbar.pug
-        main(class="main-background")
+        main(class="main-background body-index")
             section
-                - let i = 0;
-                while i < 9
-                    div
-                        img(src="https://dummyimage.com/100x100/13eddb/fff" alt="100x100")
-                        - i++;
+                h1 Welkom op FoodLove, zoek nu naar matches of bekijk je profiel!
+                .container-index
+                    a(href="/profiel")
+                        p Bekijk profiel
+                    a(href="/search")
+                        p Zoek naar matches
         include partials/tags.pug
         

@@ -39,7 +39,7 @@ function profileId(req, res) {
     let user = userSchema.findOne({
         _id: user_id
     }, (err, user) => {
-        res.render('profiel', {
+        res.render('userProfiel', {
             title: 'Profiel | ' + user.firstName + ' ' + user.lastName,
             email: user.email,
             naam: camelCase(user.firstName) + ' ' + camelCase(user.lastName),
