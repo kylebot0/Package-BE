@@ -48,6 +48,10 @@ var userSchema = new mongoose.Schema({
         type: Object,
         index: true,
     },
+    matchesId: {
+        type: [String],
+        index: true,
+    },
 });
 
 //Bit of help from stackoverflow https://stackoverflow.com/questions/14588032/mongoose-password-hashing

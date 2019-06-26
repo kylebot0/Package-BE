@@ -10,6 +10,12 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 const {
+    search,
+    matches,
+    renderMatches
+} = require('../controllers/routing/search')
+
+const {
     register,
     registerPost
 } = require('../controllers/routing/register')
@@ -58,6 +64,8 @@ router
     .get('/splashpage', splashpage)
     .get('/login', loginError)
     .get('/register', register)
+    .get('/search', loggedIn, search)
+    .get('/matches', loggedIn, matches)
 
     //Post requests
     .post('/profiel/hobby', loggedIn, profileHobbyPost)

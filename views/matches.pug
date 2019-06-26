@@ -1,0 +1,15 @@
+html(lang="en")
+    include partials/head.pug
+    body
+        include partials/navbar.pug
+        main(class="main-background body-matches")
+            section
+                h1= message
+                    each i in matchArray
+                        a(href=`/profiel/${i.matchId}`)
+                            article
+                                img(src=`${i.imgUrl}`)
+                                h2 #{i.naam}
+        
+        include partials/tags.pug
+        
