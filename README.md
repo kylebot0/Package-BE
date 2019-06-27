@@ -43,6 +43,14 @@ matchId: [array with 1 or multiple Strings]
 ## Installation
 
 ### 1. Open the terminal
+For MacOS press:
+```
+command + spacebar, then type terminal
+```
+For Windows press:
+```
+Search and then type cmd
+```
 ### 2. Go into the directory you want to install the app in
 ```
 git clone https://github.com/kylebot0/Blok-tech.git
