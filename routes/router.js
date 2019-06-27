@@ -10,6 +10,10 @@ const urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 const {
+    check,
+    validationResult
+} = require('express-validator')
+const {
     search,
     matches,
     renderMatches
@@ -17,7 +21,7 @@ const {
 
 const {
     register,
-    registerPost
+    registerPost,
 } = require('../controllers/routing/register')
 
 const {
@@ -82,5 +86,18 @@ router.use(function (req, res) {
         message: 'Page not found'
     });
 });
+
+// [
+//     check('firstName', 'First name is required').isLength({
+//         min: 2
+//     }),
+//     check('lastName', 'Last name is required').isLength({
+//         min: 2
+//     }),
+//     check('gender', 'Gender is required').exists(),
+//     check('pref', 'Sexual preference is required').exists(),
+//     check('food', 'Food preference is required').exists(),
+//     check('email', 'Email does not appear to be valid').isEmail()
+// ],
 
 module.exports = router

@@ -5,14 +5,15 @@ html(lang="en")
             form(method="POST" action="/register" accept="image/x-png,image/gif,image/jpeg" enctype="multipart/form-data")
                 legend
                     img(src='img/logo.svg')
+                include partials/errors.pug
                 fieldset.tab.current-tab
                     div(role='group')
                         label(for='firstName')  First name:
-                        input(type='text', name='firstName', placeholder='Kyle', required='')
+                        input(type='text', name='firstName', placeholder='Kyle')
                         label(for='lastName')  Last name:
-                        input(type='text', name='lastName', placeholder='Bot', required='')
+                        input(type='text', name='lastName', placeholder='Bot')
                         label(for='age')  Age:
-                        input.gender(type='number', name='age', min='16', max='80', step='1', value='16', size='16', required='')
+                        input.gender(type='number', name='age', min='16', max='80', step='1', value='16', size='16')
                         div
                             button.next.first(type='button') Next
                 fieldset.tab.current-tab
