@@ -37,7 +37,7 @@ async function registerPost(req, res, err) {
                         gender: req.body.gender,
                         age: req.body.age,
                         pref: req.body.pref,
-                        image: Math.floor(Date.now() / 10000) + '.png',
+                        image: Math.floor(Date.now() / 1000000) + '.png',
                         food: req.body.food,
                     })
                     await user.save();
