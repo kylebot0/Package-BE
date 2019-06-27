@@ -49,7 +49,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/img/avatars'))
     },
     filename: function (req, file, cb) {
-        cb(null, Math.floor(Date.now() / 10000) + '.png')
+        cb(null, Math.floor(Date.now() / 1000000) + '.png')
     }
 })
 
